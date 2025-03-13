@@ -103,6 +103,62 @@ public class App {
         
     }
     public static void main(String[] args) {
-        
+        // para cada código, 
+        // itere sobre o array de tamanhos de teste correspondente
+        // rode o código, 
+        // salve o tempo de execução do mesmo.
+        // marcar o tempo de inicio 
+        // marcar o tempo e fim 
+
+        // código 1
+        System.out.println("Resultados para codigo1:");
+        for (int i = 0; i < tamanhosTesteGrande.length; i++) {
+            int tamanho = tamanhosTesteGrande[i];
+            int[] vetor = gerarVetor(tamanho);
+            // para marcar o inicio usando nanossegundos 
+            long inicio = System.nanoTime(); 
+            int resultado = codigo1(vetor);
+            // para marcar o fim usando nanossegundos 
+            long fim = System.nanoTime();
+            System.out.println("N = " + tamanho + ", Tempo = " + (fim - inicio) + " ns, Resultado = " + resultado);
+        }
+
+        // código 2
+        System.out.println("\nResultados para codigo2:");
+        for (int i = 0; i < tamanhosTesteGrande.length; i++) {
+            int tamanho = tamanhosTesteGrande[i];
+            int[] vetor = gerarVetor(tamanho);
+            // para marcar o inicio usando nanossegundos 
+            long inicio = System.nanoTime();
+            int resultado = codigo2(vetor);
+            // para marcar o fim usando nanossegundos 
+            long fim = System.nanoTime();
+            System.out.println("N = " + tamanho + ", Tempo = " + (fim - inicio) + " ns, Resultado = " + resultado);
+        }
+
+         // codigo3
+         System.out.println("\nResultados para codigo3:");
+         for (int i = 0; i < tamanhosTesteMedio.length; i++) {
+             int tamanho = tamanhosTesteMedio[i];
+             int[] vetor = App.gerarVetor(tamanho);
+             // para marcar o inicio usando nanossegundos 
+             long inicio = System.nanoTime();
+             App.codigo3(vetor);
+             // para marcar o fim usando nanossegundos 
+             long fim = System.nanoTime();
+             System.out.println("N = " + tamanho + ", Tempo = " + (fim - inicio) + " ns");
+         }
+         
+         // codigo4
+         System.out.println("\nResultados para codigo4:");
+         for (int i = 0; i < tamanhosTestePequeno.length; i++) {
+             int tamanho = tamanhosTestePequeno[i];
+             // para marcar o inicio usando nanossegundos 
+             long inicio = System.nanoTime();
+             int resultado = App.codigo4(tamanho);
+             // para marcar o fim usando nanossegundos 
+             long fim = System.nanoTime();
+             System.out.println("N = " + tamanho + ", Tempo = " + (fim - inicio) + " ns, Resultado: " + resultado);
+         }
     }
 }
